@@ -57,7 +57,6 @@ function App() {
         <ModeToggle />
       </TabList>
       <TabPanel value={1}>
-
         <Main/>
       </TabPanel>
       <TabPanel value={2}>
