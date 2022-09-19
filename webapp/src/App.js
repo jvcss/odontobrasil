@@ -48,7 +48,7 @@ const ModeToggle = () => {
 function App() {
   return <CssVarsProvider>
 
-    <Tabs style={{ marginLeft: 5, marginRight: 5 , marginTop:15, marginBotton:15 }} defaultValue={1}>
+    <Tabs style={{ marginLeft: 5, marginRight: 5 , marginTop:8, marginBotton:8 }} defaultValue={1}>
       <TabList>
 
         <Tab value={1}>Odonto Brasil</Tab>

@@ -1,80 +1,81 @@
-import { React
- /* ,useState,useEffect */
+import {
+  React
 } from "react";
 import "./Mainly.css";
-//import autoBind from "auto-bind";
 import Carousel from "nuka-carousel"
-import {
-  Card,
-  //  CardContent,
-  CardMedia,
-  Typography,
-  Grid
-  //,    Button
-} from "@mui/material";
+import Box from '@mui/joy/Box';
+import Card from '@mui/joy/Card';
+import CardCover from '@mui/joy/CardCover';
+import CardContent from '@mui/joy/CardContent';
+import Typography from '@mui/joy/Typography';
 
 import photo_faixada from '../img/frente_odontobrasil.jpeg';
 
-
 function Banner(props) {
-  if (props.newProp) console.log(props.newProp);
-  const totalItems = props.length ? props.length : 2;
-  const mediaLength = totalItems - 1;
+  if (props.newProp) console.log("VAI CARAI " + props.newProp);
+  //else console.table(Object.keys(props).length);
+  else console.table(props.item.contents[0].Image);
 
-  let items = [];
-
-  for (let i = 0; i < mediaLength; i++) {
-    const item = props.item.Items[i];
-    const media = (
-      <Grid item xs={12 / 1} key={item.Name}>
-        <CardMedia className="Media" image={item.Image} title={item.Name}>
-          <Typography className="MediaCaption">{item.Name}</Typography>
-        </CardMedia>
-      </Grid>
-    );
-
-    items.push(media);
-  }
   return (
-    <Card raised className="Banner">
-      <Grid container spacing={0} className="BannerGrid">
-        {items}
-      </Grid>
-    </Card>
+    <Box
+      component="ul"
+      sx={{ display: 'flex', gap: 2, flexWrap: 'wrap', p: 0, m: 0 }}
+    >
+      <Card component="li" sx={{ minWidth: 300, flexGrow: 1,minHeight: 600 }}>
+        <CardCover>
+          <img
+            src={props.item.contents[0].Image}//+"?auto=format&fit=crop&w=800"
+            srcSet={props.item.contents[0].Image}// ?auto=format&fit=crop&w=800&dpr=2 2x"
+            alt=""
+          />
+        </CardCover>
+        <CardContent sx={{ justifyContent: 'top', gap: 1 }}>
+          <Typography
+            sx={{textShadow: "4px 1px 4px #000"}}
+            level="h2"
+          //  fontWeight="lg"
+            textColor="#ddd9ce"
+            fontWeight="lighter"
+            
+            mt={{ xs: 24, sm: 18 }}
+          >
+            {props.item.contents[0].Name}
+          </Typography>
+        </CardContent>
+      </Card>
+    </Box>
   );
+
 }
 
 const items = [
   {
-    Name: "Dentista 1",
-    Image: "https://source.unsplash.com/featured/?macbook",
-    contentPosition: "left",
-    Items: [
-      {
-        Name: "Macbook Pro",
-        Image: "https://source.unsplash.com/featured/?macbook"
-      }
-    ]
-  },
-  {
-    Name: "Dentista 2",
-    Caption: "Say no to manual home labour!",
-    contentPosition: "middle",
-    Items: [
-      {
-        Name: "Washing Machine WX9102",
-        Image: "https://source.unsplash.com/featured/?washingmachine"
-      }
-    ]
-  },
-  {
     Name: "Dentista 3",
-    Caption: "Give style and color to your living room!",
-    contentPosition: "right",
-    Items: [
+    caption: "Give style and color to your living room!",
+    contents: [
       {
-        Name: "Living Room Lamp",
-        Image: "https://source.unsplash.com/featured/?lamp"
+        Name: "Excelência",
+        Image: photo_faixada //"https://source.unsplash.com/featured/?dentist"
+      }
+    ]
+  },
+  {
+    name: "Dentista 1",
+    caption: "Consultórios",
+    contents: [
+      {
+        Name: "Inovador",
+        Image: "https://source.unsplash.com/featured/?dentist"
+      }
+    ]
+  },
+  {
+    name: "Dentista 2",
+    caption: "Say no to manual home labour!",
+    contents: [
+      {
+        Name: "Responsável",
+        Image: "https://source.unsplash.com/featured/?tooth"
       }
     ]
   }
@@ -84,41 +85,53 @@ const items = [
 const Main = (props) => {
   // Declare a new state variable, which we'll call "autoPlay"
   // Declarando uma nova variável de estado, que chamamos de "autoPlay"
-/*
-  const [autoPlay, toggleAutoPlay] = useState(true)
-
-  const [animation, changeAnimation] = useState('fade')
-
-  const [indicators, toggleIndicators] = useState(true)
-
-  const [timeout, setTimeout] = useState(500)
-
-  const [navButtonsAlwaysVisible, toggleNavButtonsAlwaysVisible] = useState(false)
-
-  const [navButtonsAlwaysInvisible, toggleNavButtonsAlwaysInvisible] = useState(true)
-
-  const [cycleNavigation, toggleCycleNavigation] = useState(true)*/
+  /*
+    const [autoPlay, toggleAutoPlay] = useState(true)
+  
+    const [animation, changeAnimation] = useState('fade')
+  
+    const [indicators, toggleIndicators] = useState(true)
+  
+    const [timeout, setTimeout] = useState(500)
+  
+    const [navButtonsAlwaysVisible, toggleNavButtonsAlwaysVisible] = useState(false)
+  
+    const [navButtonsAlwaysInvisible, toggleNavButtonsAlwaysInvisible] = useState(true)
+  
+    const [cycleNavigation, toggleCycleNavigation] = useState(true)*/
 
   //?auto=format&fit=crop&w=800
   return (
-    <div style={{ marginTop: "50px", color: "#494949" }}>
-      <h2 style={{textAlign: "center"}}>Consultórios e Instalações</h2>
+    <div style={{ marginTop: "1px" }}>
+      <h2 style={{ 
+        textColor:"#ddd9ce",
+        textAlign: "center",
+        margin: "1px", 
+        fontFamily: 'Tangerine',
+        fontSize: "48px",
+        textShadow: "4px 4px 4px #8b8b88",
+        fontWeight: "lighter"
+        }}>Consultórios e Instalações</h2>
+
       <Carousel
-      adaptiveHeight={true}
-      adaptiveHeightAnimation={true}
+        autoplay={true}
+       // autoplayReverse={true}
+        speed={2000}
+        wrapAround={true}
+        autoplayInterval={4000}
+        adaptiveHeight={true}
+        adaptiveHeightAnimation={true}
+        animation={'fade'}
+        withoutControls={true}
       >
-        {
-        items.map((item, index) => {
-           // return (
-              <Banner
-                item={item}
-                key={index}
-                contentPosition={item.contentPosition}
-              />
-        //   );
-          })
-          }
-        
+        {items.map((item, index) => {
+          return (
+            <Banner
+              key={index}
+              item={item}
+            />
+          );
+        })}
       </Carousel>
     </div>
 
