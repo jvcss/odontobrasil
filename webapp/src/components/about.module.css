@@ -1,0 +1,11 @@
+.styled{
+    color: "#ddd9ce";
+
+    --joy-palette-text-primary: "";
+ 
+    --joy-fontFamily-body: 'Tangerine';
+    --FormLabel-fontSize: 30px;
+    --joy-fontWeight-md: lighter;
+    --joy-lineHeight-md: lighter;
+    --FormLabel-color: "#ddd9ce";
+}

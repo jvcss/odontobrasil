@@ -1,5 +1,5 @@
 import React, { useMemo} from "react";
-import { GoogleMap, useLoadScript, MarkerF, InfoBox } from "@react-google-maps/api";
+import { GoogleMap, useLoadScript, MarkerF } from "@react-google-maps/api";
 import "./Location.css"
 import { LinearProgress } from "@mui/material";
 
@@ -39,7 +39,7 @@ export default function Location() {
   });
   //console.log(isLoaded)
   /// LOAD IMAGE INVERT 
-  //isLoaded || 
+  //
   if (!isLoaded) return (<LinearProgress color="inherit" />)
   return <Map />;
 }
