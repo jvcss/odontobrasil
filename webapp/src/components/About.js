@@ -25,7 +25,7 @@ function getCurrentDate(separator = '') {
 function getHours() {
   let newDate = new Date();
   let hours = newDate.getHours();
-  let minutes = newDate.getMinutes();
+  //let minutes = newDate.getMinutes();
   return hours
   //return (`${hours}:${minutes}`);
 }
@@ -60,7 +60,7 @@ const About = () => {
               }}
               onChange={handleChange}
               label="Entre em contato"
-              placeholder="Consultar com..."
+              placeholder="..."
               // helperText="Você pode perguntar sobre valores médios, custos de planos entre outros"
               variant="soft"
               value={message}
@@ -69,7 +69,7 @@ const About = () => {
           </CardOverflow>
 
           <Typography level="body2" sx={{
-            fontSize: 'md', mt: 1,
+            //fontSize: 'md', mt: 1,
             textColor: "#ddd9ce",
             textAlign: "center",
             margin: "1px",
@@ -81,7 +81,7 @@ const About = () => {
             Assunto: Mais Detalhes OdontoBrasil
           </Typography>
           <Typography level="body2" sx={{
-            fontSize: 'md',
+            //fontSize: 'md',
             textColor: "#ddd9ce",
             textAlign: "center",
             margin: "1px",
@@ -144,7 +144,7 @@ const About = () => {
             </CardOverflow>
           </a>
           <Typography level="h2" sx={{
-            fontSize: 'md', mt: 2,
+            //  fontSize: 'md', mt: 2,
             textColor: "#ddd9ce",
             textAlign: "center",
             margin: "1px",
@@ -179,7 +179,7 @@ const About = () => {
             }}
           >
             <Typography level="body3" sx={{
-              fontWeight: 'md', color: 'text.secondary', textColor: "#ddd9ce",
+              //fontWeight: 'md', color: 'text.secondary', textColor: "#ddd9ce",
               textAlign: "center",
               margin: "1px",
               fontFamily: 'Tangerine',
@@ -191,7 +191,7 @@ const About = () => {
             </Typography>
             <Box sx={{ width: 2, bgcolor: 'divider' }} />
             <Typography level="body3" sx={{
-              fontWeight: 'md', color: 'text.secondary', textColor: "#ddd9ce",
+              //fontWeight: 'md', color: 'text.secondary', textColor: "#ddd9ce",
               textAlign: "center",
               margin: "1px",
               fontFamily: 'Tangerine',
@@ -221,7 +221,9 @@ const About = () => {
             </CardOverflow>
           </a>
           <Typography level="h2" sx={{
-            fontSize: 'md', mt: 2, textColor: "#ddd9ce",
+            //fontSize: 'md', 
+            mt: 2,
+            textColor: "#ddd9ce",
             textAlign: "center",
             margin: "1px",
             fontFamily: 'Tangerine',
@@ -255,7 +257,8 @@ const About = () => {
             }}
           >
             <Typography level="body3" sx={{
-              fontWeight: 'md', color: 'text.secondary', textColor: "#ddd9ce",
+              //fontWeight: 'md',
+              color: 'text.secondary', textColor: "#ddd9ce",
               textAlign: "center",
               margin: "1px",
               fontFamily: 'Tangerine',
@@ -267,7 +270,8 @@ const About = () => {
             </Typography>
             <Box sx={{ width: 2, bgcolor: 'divider' }} />
             <Typography level="body3" sx={{
-              fontWeight: 'md', color: 'text.secondary', textColor: "#ddd9ce",
+              //fontWeight: 'md',
+              color: 'text.secondary', textColor: "#ddd9ce",
               textAlign: "center",
               margin: "1px",
               fontFamily: 'Tangerine',

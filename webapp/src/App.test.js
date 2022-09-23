@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/OdontoBrasil/i);
+test('loads and displays greeting', () => {
+  render(<Main />);
+  const linkElement = screen.getByText('Consultórios e Instalações');
   expect(linkElement).toBeInTheDocument();
 });
