@@ -50,17 +50,15 @@ const About = () => {
             //display: 'flex'
           }}>
           <CardOverflow>
-            <div style={{
-
-            }}> </div>
             <TextField className={about.styled}
               sx={{
                 mt: 2,
                 fontSize: "25px",
+                fontStyle: "italic"
               }}
               onChange={handleChange}
               label="Entre em contato"
-              placeholder="..."
+              placeholder="Gostaria de mais informações"
               // helperText="Você pode perguntar sobre valores médios, custos de planos entre outros"
               variant="soft"
               value={message}
@@ -126,7 +124,7 @@ const About = () => {
               textShadow: "4px 4px 4px #8b8b88",
               fontWeight: "lighter"
             }}>Enviar</Typography></Button>
-            <Box sx={{ width: 2, bgcolor: 'divider' }} />
+            
           </CardOverflow>
         </Card>
       </Grid>
